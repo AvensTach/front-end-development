@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page - JS Portal</title>
+    <link rel="stylesheet" href="CSS/styles.css"> <!-- External Stylesheet -->
+    <style>
+        /* Internal Stylesheet for specific Main Page requirements */
+
+        /* Variant 10: Name and logo absolutely positioned with 0 top offset */
+        #main-header {
+            position: absolute; /* Position value 1: absolute */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 100; /* z-index property */
+            padding: 15px 30px;
+        }
+
+        /* Float property usage */
+        .logo-img {
+            float: left; /* float property */
+            margin-right: 20px;
+        }
+
+        .nav-menu {
+            float: right;
+            margin-top: 10px;
+        }
+
+        main {
+            padding-top: 100px; /* Offset for absolute header */
+        }
+
+        /* Variant 10: Goal block has external margins, but NO internal padding */
+        .goal-block {
+            margin: 40px; /* External margins */
+            padding: 0;   /* No internal padding */
+            position: relative; /* Position value 2: relative */
+        }
+
+        /* Element with the most text content has a scrollbar */
+        .scrollable-text {
+            height: 90px;
+            overflow-y: scroll; /* overflow property */
+            border: 1px solid #eeeeee;
+            background: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        /* Variant 10: Table block shifts right by 2% of viewport width on hover */
+        .table-container {
+            display: block; /* display property */
+            width: 80%;
+            margin: 0 auto;
+            transition: transform 0.5s ease; /* 2D transform transition */
+        }
+
+        .table-container:hover {
+            transform: translateX(2vw); /* 2D transformation */
+        }
+
+        /* Variant 10: Address block gets a shadow after 2 seconds on hover */
+        .address-block {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #ffffff;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .address-block:hover {
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+            transition-delay: 2s; /* 2 seconds delay */
+        }
+    </style>
+</head>
+<body>
+<!-- ID Selector used here -->
+<header id="main-header" class="clearfix">
+    <img src="media/logo.png" alt="JS Portal Logo" width="50" class="logo-img">
+    <h1 style="margin: 0; display: inline-block;">JS Portal</h1>
+
+    <nav class="nav-menu">
+        <button class="btn" onclick="window.location.href='topics.html'">Educational Topics</button>
+        <button class="btn" onclick="window.location.href='feedback.html'">Feedback</button>
+    </nav>
+</header>
+
+<main>
+    <article class="goal-block">
+        <h2>Goal of the Web Portal</h2>
+
+        <!-- Overflow scrollbar applied here -->
+        <div class="scrollable-text">
+            <p>Our main goal is to provide accessible and high-quality education in web development for everyone. We strive to create a comprehensive environment where students can master JavaScript from scratch, practice with real-world examples, and connect with peers. By fostering a community of learners, we aim to bridge the gap between theoretical knowledge and practical industry skills.</p>
+            <p>Additional text to ensure the scrollbar is active. We believe education should be free and accessible to all global citizens regardless of their background.</p>
+        </div>
+
+        <h3>Tasks to achieve the goal:</h3>
+        <ol type="A">
+            <li>PROVIDE USERS WITH A SOLID THEORETICAL FOUNDATION IN JAVASCRIPT.</li>
+            <li>OFFER PRACTICAL TASKS TO CONSOLIDATE THE LEARNED MATERIAL.</li>
+            <li>CREATE A PLATFORM FOR COMMUNICATION AND FEEDBACK AMONG STUDENTS.</li>
+        </ol>
+    </article>
+
+    <!-- Variant 10: Content with a student emoji output after the goal description -->
+    <div style="text-align: center; font-size: 3rem; margin: 20px 0;">
+        👨‍🎓
+    </div>
+
+    <section class="table-container">
+        <h2>General Information about the Language</h2>
+        <table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
+            <caption>Table: List of Topics to Study</caption>
+            <thead>
+            <tr style="background-color: #eaeaea;">
+                <th style="padding: 10px;">#</th>
+                <th style="padding: 10px;">Module</th>
+                <th style="padding: 10px;">Topic</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="padding: 10px;">1</td>
+                <td style="padding: 10px;">JS Basics</td>
+                <td style="padding: 10px;">Variables and Data Types</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">2</td>
+                <td style="padding: 10px;">Functions</td>
+                <td style="padding: 10px;">Arrow Functions</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<footer class="address-block">
+    <hr style="border: 0; border-top: 1px solid #ccc;">
+    <p><strong>Address:</strong> 10 Education St., Kyiv</p>
+    <p><strong>Contact Phones:</strong> +380 (44) 123-45-67, +380 (67) 987-65-43</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Educational Topics - JS Portal</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <style>
+        /* Variant 10: Name and logo fixed at the top */
+        .fixed-header {
+            position: fixed; /* Position value 3: fixed */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 50;
+            padding: 15px 30px;
+            border-bottom: 1px solid #dddddd;
+        }
+    </style>
+</head>
+<body class="topics-page">
+<header class="fixed-header clearfix">
+    <img src="media/logo.png" alt="JS Portal Logo" width="50" style="vertical-align: middle; float: left; margin-right: 15px;">
+    <h1 style="display: inline-block; margin: 0; padding-top: 5px;">JS Portal</h1>
+</header>
+
+<main style="text-align: center;">
+    <h2 style="margin-top: 120px;">List of Topics to Study</h2>
+
+    <!-- Grid layout applied here -->
+    <div class="grid-container" style="text-align: left;">
+
+        <div class="topic-card">
+            <img src="media/topic1.png" alt="Programming basics">
+            <div class="topic-name">1. Introduction to JavaScript</div>
+            <p><strong>Lesson names:</strong> What is JS, How to include a script, Developer console.</p>
+            <p><strong>Task type:</strong> Quizzes, code reading.</p>
+        </div>
+
+        <div class="topic-card">
+            <img src="media/topic2.png" alt="Variables">
+            <div class="topic-name">2. Variables and Data Types</div>
+            <p><strong>Lesson names:</strong> let, const, var; Primitive types; Objects.</p>
+            <p><strong>Task type:</strong> Script writing, practical exercises.</p>
+        </div>
+
+        <div class="topic-card">
+            <img src="media/topic3.png" alt="Functions">
+            <div class="topic-name">3. Working with Functions</div>
+            <p><strong>Lesson names:</strong> Function declarations, Parameters, Return.</p>
+            <p><strong>Task type:</strong> Solving algorithmic problems.</p>
+        </div>
+
+    </div>
+
+    <br>
+    <a href="index.html" style="font-size: 1.2rem; font-weight: bold;">Go back to Main Page</a>
+</main>
+</body>
+</html>

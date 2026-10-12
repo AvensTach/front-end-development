@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback - JS Portal</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <style>
+        .simple-header {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+<header class="simple-header">
+    <img src="media/logo.png" alt="JS Portal Logo" width="60">
+    <h1>JS Portal - Feedback</h1>
+    <button class="btn" onclick="window.location.href='index.html'">Go to Main Page</button>
+</header>
+
+<main>
+    <!-- Flexbox container -->
+    <form action="#" method="post" class="flex-container">
+
+        <!-- Flex items with order and growth properties -->
+        <fieldset class="flex-item flex-item-special">
+            <legend>Personal Information</legend>
+
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="10" max="100" required style="width: 100%; padding: 10px; margin-bottom: 15px;">
+
+            <p>Are you already learning the language?</p>
+            <label><input type="radio" name="experience" value="pro"> Yes, I am a pro</label><br>
+            <label><input type="radio" name="experience" value="basics"> Yes, but I know the basics</label><br>
+            <label><input type="radio" name="experience" value="planning"> I am planning to</label><br>
+            <label><input type="radio" name="experience" value="no"> No</label><br>
+        </fieldset>
+
+        <div class="flex-item">
+            <label for="purpose">Purpose of feedback:</label>
+            <select id="purpose" name="purpose">
+                <option value="cooperation">Cooperation</option>
+                <option value="complaint">Complaint about poor quality content</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="error">Error presence</option>
+            </select>
+
+            <label for="details">Details:</label>
+            <textarea id="details" name="details" rows="6" maxlength="500" placeholder="Enter your message here..."></textarea>
+
+            <label style="display: block; margin-top: 10px;">
+                <input type="checkbox" name="consent" required>
+                I consent to the processing of my personal information
+            </label>
+        </div>
+
+        <!-- Submit buttons area spanning full flex width -->
+        <div class="flex-item" style="flex-basis: 100%; text-align: center; background: transparent; box-shadow: none;">
+            <button type="submit" class="btn" style="margin-right: 15px;">Submit</button>
+            <button type="reset" class="btn" style="background-color: #6c757d;">Clear Form</button>
+        </div>
+    </form>
+</main>
+</body>
+</html>

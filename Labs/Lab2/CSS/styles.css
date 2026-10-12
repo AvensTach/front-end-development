@@ -1,0 +1,147 @@
+/*
+   External Style Sheet
+   Design Style: Minimalism
+   Fonts: 'Roboto', 'Open Sans'
+   Colors specified via: Name (darkviolet), HEX (#333333), RGB (rgb(250, 250, 250)), HSL (hsl(51, 100%, 50%))
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700&family=Roboto:wght@400;700&display=swap');
+
+/* 1. Universal Selector */
+* {
+    box-sizing: border-box;
+}
+
+/* 2. Element Selector */
+body {
+    font-family: 'Roboto', sans-serif; /* Font 1 */
+    color: #333333; /* Color specified via HEX */
+    background-color: rgb(250, 250, 250); /* Color specified via RGB */
+    margin: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Open Sans', sans-serif; /* Font 2 */
+    color: #111111;
+}
+
+/* 3. Combinators: Sibling (+) and General Sibling (~) */
+h2 + p {
+    margin-top: 5px;
+}
+
+h3 ~ p {
+    color: #555555;
+}
+
+/* 4. Attribute Selector with *= */
+input[type*="text"], input[type="email"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+/* --- Transition between two different styles (at least 3 properties) --- */
+/* Class Selector */
+.btn {
+    background-color: rgb(0, 123, 255);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    /* Transition applied to background-color, box-shadow, and border-radius */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+}
+
+/* Pseudo-class :hover */
+.btn:hover {
+    background-color: rgb(0, 86, 179);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* --- FLEXBOX Layout (Feedback Page) --- */
+.flex-container {
+    display: flex;
+    flex-flow: row wrap; /* flex-flow property */
+    justify-content: center; /* justify-content property */
+    align-items: flex-start; /* align-items property */
+    align-content: space-around; /* align-content property */
+    gap: 20px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex-item {
+    flex-grow: 1; /* flex-grow property */
+    flex-shrink: 1; /* flex-shrink property */
+    align-self: stretch; /* align-self property */
+    order: 0; /* order property */
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Specific order modification */
+.flex-item-special {
+    order: -1;
+}
+
+/* --- GRID Layout (Topics Page) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    margin-top: 60px; /* Offset for fixed header */
+}
+
+/* Variant 10: Topic Card Styling */
+.topic-card {
+    /* Information about each topic framed in dark violet */
+    /* Right border is solid thin, left is dashed */
+    border: 2px solid transparent;
+    border-right: thin solid darkviolet; /* Color specified via Name */
+    border-left: dashed darkviolet;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.topic-card img {
+    width: 100%;
+    height: auto;
+    /* Animation base preparation */
+    transition: filter 0.4s ease-in-out;
+}
+
+/* Variant 10: Image saturation increases by 1.5 times on hover */
+.topic-card img:hover {
+    filter: saturate(150%);
+}
+
+/* Variant 10: Topic name styling */
+.topic-name {
+    font-weight: 900; /* Higher weight */
+    line-height: 1.8; /* Taller glyph height */
+    font-style: italic; /* Italic text */
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+/* Variant 10: Visited links on the topics page */
+.topics-page a:visited {
+    color: hsl(51, 100%, 50%); /* Rich yellow (Color specified via HSL) */
+}
+
+/* Clearfix for floated elements */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
