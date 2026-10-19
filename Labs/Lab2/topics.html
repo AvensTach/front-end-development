@@ -3,41 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Educational Topics - JS Portal</title>
+    <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
-<!-- Header with logo and title -->
-<header>
-    <img src="media/logo.png" alt="JS Portal Logo" width="50">
-    <h1>JS Portal</h1>
+
+<header class="topics-header">
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <img src="media/logo.png" alt="JS Portal Logo" width="50">
+        <h1>JS Portal</h1>
+    </div>
+    <button onclick="window.location.href='index.html'" style="margin-top: 10px; padding: 5px 10px;">Go to Main Page</button>
 </header>
 
-<main>
-    <h2>List of Topics to Study</h2>
-    <!-- Unordered list of up to 10 topics -->
-    <ul>
-        <li>
-            <h3>1. Introduction to JavaScript</h3>
+<main class="topics-main">
+    <h2 style="margin-bottom: 20px; text-align: center;">List of Topics to Study</h2>
+
+    <ul class="grid-container">
+        <li class="topic-card">
+            <h3 class="topic-title">1. Introduction to JavaScript</h3>
             <img src="media/topic1.png" alt="Programming basics">
             <p><strong>Lesson names:</strong> What is JS, How to include a script, Developer console.</p>
             <p><strong>Task type:</strong> Quizzes, code reading.</p>
+            <a href="#">Read more</a>
         </li>
-        <li>
-            <h3>2. Variables and Data Types</h3>
+        <li class="topic-card">
+            <h3 class="topic-title">2. Variables and Data Types</h3>
             <img src="media/topic2.png" alt="Variables">
             <p><strong>Lesson names:</strong> let, const, var; Primitive types; Objects.</p>
             <p><strong>Task type:</strong> Script writing, practical exercises.</p>
+            <a href="#">Read more</a>
         </li>
-        <li>
-            <h3>3. Working with Functions</h3>
+        <li class="topic-card">
+            <h3 class="topic-title">3. Working with Functions</h3>
             <img src="media/topic3.png" alt="Functions">
             <p><strong>Lesson names:</strong> Function declarations, Parameters, Return.</p>
             <p><strong>Task type:</strong> Solving algorithmic problems.</p>
+            <a href="#">Read more</a>
         </li>
     </ul>
-
-    <br>
-    <!-- Button to navigate back to the main page -->
-    <button onclick="window.location.href='index.html'">Go to Main Page</button>
 </main>
+
 </body>
 </html>

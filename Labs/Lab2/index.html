@@ -3,129 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <title>Main Page - JS Portal</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <style>
+        /* Variant req: Absolute position with 0 top offset */
+        .main-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 15px 20px;
+            z-index: 50;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .main-wrapper {
+            position: relative;
+            padding-top: 150px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .useful-aside {
+            float: right;
+            width: 250px;
+            background: white;
+            padding: 15px;
+            border: 1px solid #eaeaea;
+            margin-left: 20px;
+            margin-top: 60px;
+        }
+
+        @keyframes fadeInScale {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Variant req: External margins, no internal */
+        #portal-goal {
+            margin: 30px 15px;
+            padding: 0;
+        }
+
+        #portal-goal::after {
+            animation: fadeInScale 2s infinite alternate;
+            content: "‍🧑‍🎓";
+            display: block;
+            font-size: 3rem;
+            text-align: center;
+            margin: 20px 0;
+
+        }
+
+        .scrollable-content {
+            max-height: 100px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background: #fff;
+            margin-bottom: 20px;
+        }
+
+        /* Variant req: Shift right by 2% of viewport */
+        #language-info {
+            background: white;
+            padding: 20px;
+            transition: transform 0.4s ease;
+        }
+        #language-info:hover {
+            transform: translateX(2vw);
+        }
+
+        .interactive-btn {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+        }
+        .interactive-btn:hover {
+            background-color: black;
+            color: white;
+            border-radius: 8px;
+        }
+
+        /* Variant req: Shadow appears after 2s delay */
+        .contacts-block {
+            padding: 20px;
+            background: white;
+            margin-top: 40px;
+            clear: both;
+            transition: box-shadow 0.3s ease 2s;
+        }
+        .contacts-block:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-<!-- Header section containing logo, title, navigation, and auth buttons -->
-<header>
-    <img src="media/logo.png" alt="JS Portal Logo" width="50">
-    <h1>JS Portal - Learn JavaScript</h1>
 
-    <!-- Navigation menu -->
-    <nav>
-        <button onclick="window.location.href='topics.html'">Educational Topics</button>
-        <button onclick="window.location.href='feedback.html'">Feedback</button>
-        <br><br>
-        <!-- Internal links to page sections -->
-        <a href="#portal-goal">Go to Portal Goal</a> |
-        <a href="#language-info">Go to Language Info</a>
+<header class="main-header">
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <img src="media/logo.png" alt="JS Portal Logo" width="50">
+        <h1>JS Portal - Learn JavaScript</h1>
+    </div>
+
+    <nav style="margin-top: 10px;">
+        <button class="interactive-btn" onclick="window.location.href='topics.html'">Educational Topics</button>
+        <button class="interactive-btn" onclick="window.location.href='feedback.html'">Feedback</button>
+        <span style="margin-left: 15px;">
+            <a href="#portal-goal">Portal Goal</a> |
+            <a href="#language-info">Language Info</a>
+        </span>
     </nav>
-    <br>
-    <button>Go to My Account</button>
-    <button>Register</button>
 </header>
 
-<!-- Main content area -->
-<main>
-    <!-- Article describing the goal of the portal -->
-    <article id="portal-goal">
-        <h2>Goal of the Web Portal</h2>
-        <p>Our main goal is to provide accessible and high-quality education in web development for everyone.</p>
-        <h3>Tasks to achieve the goal:</h3>
+<div class="main-wrapper">
+    <aside class="useful-aside">
+        <h3>Useful Resources</h3>
+        <p>Learn more on <a href="https://developer.mozilla.org/" target="_blank">MDN</a>.</p>
+        <p>Read tutorial at <a href="https://javascript.info/" target="_blank">JS.info</a>.</p>
+    </aside>
 
-        <!-- Ordered list numbered with uppercase Latin letters -->
-        <ol type="A">
-            <li>Provide users with a solid theoretical foundation in JavaScript.</li>
-            <li>Offer practical tasks to consolidate the learned material.</li>
-            <li>Create a platform for communication and feedback among students.</li>
-        </ol>
+    <main>
+        <article id="portal-goal">
+            <h2>Goal of the Web Portal</h2>
+            <div class="scrollable-content">
+                <p>Our main goal is to provide accessible and high-quality education in web development for everyone. We believe that technology should be open to all, regardless of their background. In this detailed course, we cover everything from basic syntax to advanced topics like asynchronous programming, DOM manipulation, and modern frameworks. Our community is growing every day, and we are excited to have you on board. Keep learning, keep coding, and build amazing things!</p>
+            </div>
 
-        <!-- A sentence stylized with span, i, b, em, u tags -->
-        <p><span>In our course you will find <i>interesting</i> <b>lessons</b>, where <em>each topic</em> is explained in a <u>very detailed</u> manner.</span>
-        </p>
-    </article>
+            <h3>Tasks to achieve the goal:</h3>
+            <ol type="A" style="margin-left: 20px;">
+                <li>Provide users with a solid theoretical foundation in JavaScript.</li>
+                <li>Offer practical tasks to consolidate the learned material.</li>
+                <li>Create a platform for communication.</li>
+            </ol>
+        </article>
 
-    <!-- Section with general information and the study table -->
-    <section id="language-info">
-        <h2>General Information about the Language</h2>
-        <p>JavaScript is a high-level programming language that is one of the core technologies of the World Wide
-            Web.</p>
 
-        <!-- Table with at least 6 rows, 5 columns, and horizontally/vertically merged cells -->
-        <table>
-            <caption>Table: List of Topics to Study</caption>
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Module</th>
-                <th>Topic</th>
-                <th>Hours (Theory)</th>
-                <th>Hours (Practice)</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td rowspan="2">JS Basics</td>
-                <td>Variables and Data Types</td>
-                <td>2</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Operators and Loops</td>
-                <td>2</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Data Structures</td>
-                <!-- Horizontally merged cells -->
-                <td colspan="2">Arrays and Objects (Combined Course)</td>
-                <td>6</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td rowspan="2">Functions</td>
-                <td>Declarations and Calls</td>
-                <td>3</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Arrow Functions</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>DOM</td>
-                <td>Page Interaction</td>
-                <td>4</td>
-                <td>8</td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <th colspan="3">Total course hours:</th>
-                <td colspan="2">42 hours</td>
-            </tr>
-            </tfoot>
-        </table>
-    </section>
-</main>
+        <section id="language-info">
+            <h2>General Information about the Language</h2>
+            <p>JavaScript is a high-level programming language that is one of the core technologies of the World Wide Web.</p>
 
-<!-- Aside section with external links -->
-<aside>
-    <h3>Useful Resources</h3>
-    <p>Learn more on <a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a>.</p>
-    <p>Read the modern tutorial at <a href="https://javascript.info/" target="_blank">JavaScript.info</a>.</p>
-</aside>
+            <table>
+                <caption>List of Topics to Study</caption>
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Module</th>
+                    <th>Topic</th>
+                    <th>Hours (Th)</th>
+                    <th>Hours (Pr)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td rowspan="2">JS Basics</td>
+                    <td>Variables and Data Types</td>
+                    <td>2</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Operators and Loops</td>
+                    <td>2</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Data Structures</td>
+                    <td colspan="2">Arrays and Objects (Combined Course)</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td rowspan="2">Functions</td>
+                    <td>Declarations and Calls</td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Arrow Functions</td>
+                    <td>1</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>DOM</td>
+                    <td>Page Interaction</td>
+                    <td>4</td>
+                    <td>8</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th colspan="3">Total course hours:</th>
+                    <td colspan="2">42 hours</td>
+                </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
 
-<!-- Footer with contact information -->
-<footer>
-    <hr>
-    <p><strong>Address:</strong> 10 Education St., Kyiv</p>
-    <p><strong>Contact Phones:</strong> +380 (44) 123-45-67, +380 (67) 987-65-43</p>
-</footer>
+    <!-- Variant req: Shadow on address hover after 2 sec -->
+    <footer class="contacts-block">
+        <hr style="margin-bottom: 15px; border-top: 1px solid #eaeaea;">
+        <p><strong>Address:</strong> 10 Education St., Kyiv</p>
+        <p><strong>Contact Phones:</strong> +380 (44) 123-45-67, +380 (67) 987-65-43</p>
+    </footer>
+</div>
+
 </body>
 </html>
