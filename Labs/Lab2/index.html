@@ -64,6 +64,25 @@
             margin-bottom: 20px;
         }
 
+        ::selection {
+            background-color: #FFCC00;
+            color: black;
+        }
+
+        #portal-goal p::first-letter {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #8B008B;
+        }
+
+        .scrollable-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .scrollable-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
         /* Variant req: Shift right by 2% of viewport */
         #language-info {
             background: white;
