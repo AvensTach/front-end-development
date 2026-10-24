@@ -12,7 +12,6 @@ let topics = [
 ];
 
 function sortAndAverage(arr) {
-    // Впорядкування за тривалістю (переводимо у хвилини для порівняння)
     arr.sort((a, b) => {
         let timeA = a.duration.hours * 60 + a.duration.mins;
         let timeB = b.duration.hours * 60 + b.duration.mins;
