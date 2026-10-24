@@ -1,14 +1,78 @@
 let topics = [
-    { id: 1, name: "Основи JS", author: "Айк", type: "теорія", usersDay1: 120, usersDay2: 150, duration: { hours: 1, mins: 30 } },
-    { id: 2, name: "Масиви", author: "Боб", type: "практика", usersDay1: 80, usersDay2: 60, duration: { hours: 2, mins: 0 } },
-    { id: 3, name: "Функції", author: "Айк", type: "практика", usersDay1: 200, usersDay2: 190, duration: { hours: 1, mins: 0 } },
-    { id: 4, name: "Об'єкти", author: "Сміт", type: "теорія", usersDay1: 50, usersDay2: 30, duration: { hours: 0, mins: 45 } },
-    { id: 5, name: "Цикли", author: "Доу", type: "практика", usersDay1: 300, usersDay2: 250, duration: { hours: 1, mins: 20 } },
-    { id: 6, name: "Умови", author: "Айк", type: "теорія", usersDay1: 110, usersDay2: 100, duration: { hours: 0, mins: 40 } },
-    { id: 7, name: "Класи", author: "Боб", type: "практика", usersDay1: 70, usersDay2: 90, duration: { hours: 2, mins: 30 } },
-    { id: 8, name: "DOM", author: "Сміт", type: "теорія", usersDay1: 90, usersDay2: 85, duration: { hours: 1, mins: 40 } },
-    { id: 9, name: "Події", author: "Джонсон", type: "практика", usersDay1: 150, usersDay2: 140, duration: { hours: 1, mins: 50 } },
-    { id: 10, name: "API", author: "Доу", type: "теорія", usersDay1: 210, usersDay2: 300, duration: { hours: 3, mins: 0 } }
+    {
+        id: 1,
+        name: "Основи JS",
+        author: "Айк",
+        type: "теорія",
+        usersDay1: 120,
+        usersDay2: 150,
+        duration: {hours: 1, mins: 30}
+    },
+    {
+        id: 2,
+        name: "Масиви",
+        author: "Боб",
+        type: "практика",
+        usersDay1: 80,
+        usersDay2: 60,
+        duration: {hours: 2, mins: 0}
+    },
+    {
+        id: 3,
+        name: "Функції",
+        author: "Айк",
+        type: "практика",
+        usersDay1: 200,
+        usersDay2: 190,
+        duration: {hours: 1, mins: 0}
+    },
+    {
+        id: 4,
+        name: "Об'єкти",
+        author: "Сміт",
+        type: "теорія",
+        usersDay1: 50,
+        usersDay2: 30,
+        duration: {hours: 0, mins: 45}
+    },
+    {
+        id: 5,
+        name: "Цикли",
+        author: "Доу",
+        type: "практика",
+        usersDay1: 300,
+        usersDay2: 250,
+        duration: {hours: 1, mins: 20}
+    },
+    {
+        id: 6,
+        name: "Умови",
+        author: "Айк",
+        type: "теорія",
+        usersDay1: 110,
+        usersDay2: 100,
+        duration: {hours: 0, mins: 40}
+    },
+    {
+        id: 7,
+        name: "Класи",
+        author: "Боб",
+        type: "практика",
+        usersDay1: 70,
+        usersDay2: 90,
+        duration: {hours: 2, mins: 30}
+    },
+    {id: 8, name: "DOM", author: "Сміт", type: "теорія", usersDay1: 90, usersDay2: 85, duration: {hours: 1, mins: 40}},
+    {
+        id: 9,
+        name: "Події",
+        author: "Джонсон",
+        type: "практика",
+        usersDay1: 150,
+        usersDay2: 140,
+        duration: {hours: 1, mins: 50}
+    },
+    {id: 10, name: "API", author: "Доу", type: "теорія", usersDay1: 210, usersDay2: 300, duration: {hours: 3, mins: 0}}
 ];
 
 function sortAndAverage(arr) {
@@ -77,16 +141,27 @@ function calculateStudyDuration(selectedTopics) {
 sortAndAverage(topics);
 findMinUsersDay2(topics);
 
-addNewTopic(topics, { id: 11, name: "Node.js", author: "Кларк", type: "теорія", usersDay1: 50, usersDay2: 60, duration: { hours: 2, mins: 0 } });
+addNewTopic(topics, {
+    id: 11,
+    name: "Node.js",
+    author: "Кларк",
+    type: "теорія",
+    usersDay1: 50,
+    usersDay2: 60,
+    duration: {hours: 2, mins: 0}
+});
 
-addNewTopic(topics, { id: 12, name: "React", author: "Вайт", type: "практика", usersDay1: 150, usersDay2: null, duration: { hours: 1, mins: 30 } });
+addNewTopic(topics, {
+    id: 12,
+    name: "React",
+    author: "Вайт",
+    type: "практика",
+    usersDay1: 150,
+    usersDay2: null,
+    duration: {hours: 1, mins: 30}
+});
 
 calculateStudyDuration([topics[0], topics[1], topics[2], topics[3]]);
-
-
-
-
-
 
 
 class UserAccount {
