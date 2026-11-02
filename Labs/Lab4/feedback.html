@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <title>Feedback - JS Portal</title>
     <link rel="stylesheet" href="CSS/styles.css">
+    <script src="scripts/script.js" defer></script>
 </head>
 <body>
 
 <header style="padding: 20px; background: white; text-align: center; border-bottom: 1px solid #eaeaea;">
     <img src="media/logo.png" alt="JS Portal Logo" width="50">
     <h1>JS Portal - Feedback</h1>
-    <button onclick="window.location.href='index.html'" style="padding: 5px 10px; margin-top: 10px;">Go to Main Page</button>
+    <button onclick="window.location.href='index.html'" style="padding: 5px 10px; margin-top: 10px;">Go to Main Page
+    </button>
 </header>
 
 <main class="feedback-main">
@@ -44,9 +46,12 @@
             </select>
         </div>
 
-        <div class="flex-item">
+        <div class="flex-item tooltip-container">
             <label for="details">Details:</label>
-            <textarea id="details" name="details" rows="6" maxlength="500" placeholder="Enter your message here (up to 500 characters)..." style="padding: 10px; resize: vertical;"></textarea>
+            <textarea id="details" name="details" rows="6" maxlength="500"
+                      placeholder="Enter your message here (up to 500 characters)..."
+                      style="padding: 10px; resize: vertical;"></textarea>
+            <span id="details-tooltip" class="tooltip-text">Your opinion is important to us! Please clarify the purpose of your request.</span>
         </div>
 
         <div class="flex-item" style="flex-direction: row; align-items: center; gap: 10px;">

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Main Page - JS Portal</title>
     <link rel="stylesheet" href="CSS/styles.css">
+    <script src="scripts/script.js" defer></script>
     <style>
         /* Variant req: Absolute position with 0 top offset */
         .main-header {
@@ -14,7 +15,7 @@
             background-color: white;
             padding: 15px 20px;
             z-index: 50;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .main-wrapper {
@@ -35,8 +36,14 @@
         }
 
         @keyframes fadeInScale {
-            0% { transform: scale(0.9); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         /* Variant req: External margins, no internal */
@@ -78,6 +85,7 @@
         .scrollable-content::-webkit-scrollbar {
             width: 8px;
         }
+
         .scrollable-content::-webkit-scrollbar-thumb {
             background: #888;
             border-radius: 4px;
@@ -89,6 +97,7 @@
             padding: 20px;
             transition: transform 0.4s ease;
         }
+
         #language-info:hover {
             transform: translateX(2vw);
         }
@@ -101,6 +110,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
         }
+
         .interactive-btn:hover {
             background-color: black;
             color: white;
@@ -115,8 +125,9 @@
             clear: both;
             transition: box-shadow 0.3s ease 2s;
         }
+
         .contacts-block:hover {
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
         table {
@@ -124,6 +135,7 @@
             border-collapse: collapse;
             margin-top: 15px;
         }
+
         th, td {
             border: 1px solid #ddd;
             padding: 8px;
@@ -160,7 +172,11 @@
         <article id="portal-goal">
             <h2>Goal of the Web Portal</h2>
             <div class="scrollable-content">
-                <p>Our main goal is to provide accessible and high-quality education in web development for everyone. We believe that technology should be open to all, regardless of their background. In this detailed course, we cover everything from basic syntax to advanced topics like asynchronous programming, DOM manipulation, and modern frameworks. Our community is growing every day, and we are excited to have you on board. Keep learning, keep coding, and build amazing things!</p>
+                <p>Our main goal is to provide accessible and high-quality education in web development for everyone. We
+                    believe that technology should be open to all, regardless of their background. In this detailed
+                    course, we cover everything from basic syntax to advanced topics like asynchronous programming, DOM
+                    manipulation, and modern frameworks. Our community is growing every day, and we are excited to have
+                    you on board. Keep learning, keep coding, and build amazing things!</p>
             </div>
 
             <h3>Tasks to achieve the goal:</h3>
@@ -174,7 +190,8 @@
 
         <section id="language-info">
             <h2>General Information about the Language</h2>
-            <p>JavaScript is a high-level programming language that is one of the core technologies of the World Wide Web.</p>
+            <p>JavaScript is a high-level programming language that is one of the core technologies of the World Wide
+                Web.</p>
 
             <table>
                 <caption>List of Topics to Study</caption>
@@ -244,6 +261,17 @@
         <p><strong>Address:</strong> 10 Education St., Kyiv</p>
         <p><strong>Contact Phones:</strong> +380 (44) 123-45-67, +380 (67) 987-65-43</p>
     </footer>
+</div>
+<div id="rules-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-modal">&times;</span>
+        <h2>Golden Rules of Learning</h2>
+        <ul>
+            <li>Practice is more important than dry theory.</li>
+            <li>Consistency is the key to success.</li>
+            <li>Don't be afraid to make mistakes; they help you learn.</li>
+        </ul>
+    </div>
 </div>
 
 </body>

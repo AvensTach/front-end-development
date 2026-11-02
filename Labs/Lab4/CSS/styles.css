@@ -130,3 +130,133 @@ fieldset {
 .topic-card img:hover {
     filter: saturate(150%);
 }
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+}
+.close-btn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+.accordion-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 250px;
+    z-index: 100;
+    margin-top: 50px;
+}
+.accordion-header {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+}
+.accordion-content {
+    padding: 0 10px;
+    background-color: #f1f1f1;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion-link {
+    display: block;
+    padding: 8px 0;
+    color: black;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.accordion-link:visited {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tooltip-container {
+    position: relative;
+}
+
+.tooltip-text {
+    display: none;
+    position: absolute;
+    left: calc(100% + 15px);
+    top: 30px;
+    width: 220px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    z-index: 100;
+    white-space: normal;
+}
+
+.search-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#search-topic {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Ensure HTML takes full screen height to prevent white gaps at the bottom */
+html {
+    min-height: 100vh;
+    background-color: hsl(0, 0%, 98%);
+}
+
+body {
+    min-height: 100vh;
+}
+
+/* Night mode: 50% darker than hsl(0, 0%, 98%) */
+html.night-mode,
+body.night-mode {
+    background-color: hsl(0, 0%, 49%);
+}
+
+
+body.night-mode header,
+body.night-mode .topics-header,
+body.night-mode .topic-card,
+body.night-mode fieldset,
+body.night-mode input,
+body.night-mode select,
+body.night-mode textarea,
+body.night-mode .modal-content,
+body.night-mode .accordion-content,
+body.night-mode #language-info,
+body.night-mode .contacts-block,
+body.night-mode .useful-aside {
+    background-color: #808080 !important; /* !important overrides inline styles like background: white */
+    color: #f1f1f1; /* Ensure text remains readable */
+}
+
