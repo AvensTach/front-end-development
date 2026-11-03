@@ -5,19 +5,16 @@ const closeModalBtn = document.getElementById("close-modal");
 let focusTimer;
 
 if (goalSection && modal) {
-    // Start timer on mouse enter
     goalSection.addEventListener("mouseenter", () => {
         focusTimer = setTimeout(() => {
             modal.style.display = "block";
         }, 30000); // 30 seconds
     });
 
-    // Clear timer if user leaves the section before 30 seconds
     goalSection.addEventListener("mouseleave", () => {
         clearTimeout(focusTimer);
     });
 
-    // Close modal logic
     closeModalBtn.addEventListener("click", () => {
         modal.style.display = "none";
     });
@@ -33,10 +30,8 @@ if (searchInput) {
         const filterText = this.value.toLowerCase();
 
         topics.forEach(topic => {
-            // Find the title inside the specific card
             const title = topic.querySelector(".topic-title").textContent.toLowerCase();
 
-            // Show or hide topic based on search match
             if (title.includes(filterText)) {
                 topic.style.display = "";
             } else {
@@ -68,22 +63,19 @@ const tooltip = document.getElementById("details-tooltip");
 
 if (detailsField && tooltip) {
     detailsField.addEventListener("mouseover", () => {
-        // Apply visual changes on hover
+
         detailsField.style.backgroundColor = "#e0f7fa";
         detailsField.style.border = "2px solid #00796b";
         detailsField.style.boxShadow = "3px 3px 8px rgba(0,0,0,0.4)";
 
-        // Show tooltip
         tooltip.style.display = "inline-block";
     });
 
     detailsField.addEventListener("mouseout", () => {
-        // Revert visual changes when mouse leaves
+
         detailsField.style.backgroundColor = "";
         detailsField.style.border = "";
         detailsField.style.boxShadow = "";
-
-        // Hide tooltip
         tooltip.style.display = "none";
     });
 }
@@ -93,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentHour = new Date().getHours();
 
     if (currentHour >= 21 || currentHour < 6) {
-        // Add class to body and html to change background colors safely
         document.documentElement.classList.add("night-mode");
         document.body.classList.add("night-mode");
     }
