@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Educational Topics - JS Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header class="topics-header">
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <img src="media/logo.png" alt="JS Portal Logo" width="50">
+        <h1>JS Portal</h1>
+    </div>
+    <button onclick="window.location.href='index.html'" style="margin-top: 10px; padding: 5px 10px;">Go to Main Page</button>
+</header>
+
+<main class="topics-main" style="position: relative;">
+
+    <div class="accordion-container">
+        <button class="accordion-header">Опис тем (Акордеон)</button>
+        <div class="accordion-content">
+            <a href="#topic-1" class="accordion-link">1. Introduction to JavaScript</a>
+            <a href="#topic-2" class="accordion-link">2. Variables and Data Types</a>
+            <a href="#topic-3" class="accordion-link">3. Working with Functions</a>
+        </div>
+    </div>
+
+    <h2 style="margin: 20px; text-align: center;">List of Topics to Study</h2>
+
+    <!-- Search input placed at the top, directly above the topics grid -->
+    <div class="search-container" style="text-align: center; margin-bottom: 30px;">
+        <input type="text" id="search-topic" placeholder="Пошук теми за назвою..." style="padding: 10px; width: 300px; font-size: 16px;">
+    </div>
+
+    <ul class="grid-container">
+        <li class="topic-card" id="topic-1">
+            <h3 class="topic-title">1. Introduction to JavaScript</h3>
+            <img src="media/topic1.png" alt="Programming basics">
+            <p><strong>Lesson names:</strong> What is JS, How to include a script, Developer console.</p>
+            <p><strong>Task type:</strong> Quizzes, code reading.</p>
+            <a href="#">Read more</a>
+        </li>
+        <li class="topic-card" id="topic-2">
+            <h3 class="topic-title">2. Variables and Data Types</h3>
+            <img src="media/topic2.png" alt="Variables">
+            <p><strong>Lesson names:</strong> let, const, var; Primitive types; Objects.</p>
+            <p><strong>Task type:</strong> Script writing, practical exercises.</p>
+            <a href="#">Read more</a>
+        </li>
+        <li class="topic-card" id="topic-3">
+            <h3 class="topic-title">3. Working with Functions</h3>
+            <img src="media/topic3.png" alt="Functions">
+            <p><strong>Lesson names:</strong> Function declarations, Parameters, Return.</p>
+            <p><strong>Task type:</strong> Solving algorithmic problems.</p>
+            <a href="#">Read more</a>
+        </li>
+    </ul>
+</main>
+<script src="scripts/script.js" defer></script>
+</body>
+</html>

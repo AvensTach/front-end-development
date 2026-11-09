@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: hsl(0, 0%, 98%); /* HSL color */
+    color: rgb(40, 40, 40); /* RGB color */
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+nav > button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 1px solid black;
+    background: transparent;
+}
+
+a[href] {
+    text-decoration: none;
+    color: #0056b3;
+}
+
+a:visited {
+    color: #FFCC00;
+}
+
+.feedback-main {
+    padding: 40px 20px;
+}
+
+/* Кросбраузерність для Flexbox */
+.flex-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.flex-item {
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-btn-group {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    width: 100%;
+}
+
+.btn-submit {
+    order: 2;
+    padding: 10px 20px;
+}
+
+.btn-reset {
+    order: 1;
+    padding: 10px 20px;
+}
+
+fieldset {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: white;
+}
+
+/* Topics Page (Grid Layout) */
+.topics-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    padding: 15px 20px;
+
+    /* Кросбраузерність для Box Shadow */
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    z-index: 100;
+}
+
+.topics-main {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    list-style: none;
+}
+
+.topic-card {
+    background: white;
+    padding: 20px;
+    border: 1px solid transparent;
+    border-right: 1px solid #8B008B;
+    border-left: 1px dashed #8B008B;
+}
+
+.topic-title {
+    font-weight: 800;
+    font-size: 1.6rem;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+/* Гнучкі зображення */
+.topic-card img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+
+    /* Кросбраузерні переходи (Transitions) */
+    -webkit-transition: -webkit-filter 0.3s ease;
+    -moz-transition: filter 0.3s ease;
+    -o-transition: filter 0.3s ease;
+    transition: filter 0.3s ease;
+}
+
+.topic-card img:hover {
+    -webkit-filter: saturate(150%);
+    filter: saturate(150%);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+}
+
+.close-btn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Замінено абсолютні px на % */
+.accordion-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 50px;
+}
+
+.accordion-header {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+}
+
+.accordion-content {
+    padding: 0 10px;
+    background-color: #f1f1f1;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.3s ease-out;
+    -moz-transition: max-height 0.3s ease-out;
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion-link {
+    display: block;
+    padding: 8px 0;
+    color: black;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.accordion-link:visited {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tooltip-container {
+    position: relative;
+}
+
+.tooltip-text {
+    display: none;
+    position: absolute;
+    left: calc(100% + 15px);
+    top: 30px;
+    width: 220px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+
+    -webkit-box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    z-index: 100;
+    white-space: normal;
+}
+
+.search-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Замінено 300px на відносну одиницю */
+#search-topic {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+html {
+    min-height: 100vh;
+    background-color: hsl(0, 0%, 98%);
+}
+
+body {
+    min-height: 100vh;
+}
+
+html.night-mode,
+body.night-mode {
+    background-color: hsl(0, 0%, 49%);
+}
+
+body.night-mode header,
+body.night-mode .topics-header,
+body.night-mode .topic-card,
+body.night-mode fieldset,
+body.night-mode input,
+body.night-mode select,
+body.night-mode textarea,
+body.night-mode .modal-content,
+body.night-mode .accordion-content,
+body.night-mode #language-info,
+body.night-mode .contacts-block,
+body.night-mode .useful-aside {
+    background-color: #808080 !important;
+    color: #f1f1f1;
+}
+
+.contacts-block {
+    display: block;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+}
+
+/* АДАПТИВНІСТЬ (Брейкпоінти)*/
+
+/* Планшети */
+@media only screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .flex-container {
+        flex-direction: column;
+    }
+    .topic-title {
+        font-size: 1.4rem;
+    }
+    .modal-content {
+        width: 80%;
+    }
+}
+
+/* Смартфони */
+@media only screen and (max-width: 480px) {
+    .topics-header {
+        padding: 10px;
+    }
+    .topics-header h1 {
+        font-size: 1.5rem;
+    }
+    /* Акордеон більше не "літає" зліва, а стає у загальний потік */
+    .accordion-container {
+        position: absolute;
+        top: 100px;
+        left: 20px;
+        width: 100%;
+        max-width: 250px;
+        z-index: 110;
+        margin-top: 0;
+    }
+    #search-topic {
+        width: 90%;
+    }
+    /* Tooltip опускається вниз, щоб не вилазити за межі екрану */
+    .tooltip-text {
+        left: 0;
+        top: 100%;
+        width: 100%;
+    }
+}
