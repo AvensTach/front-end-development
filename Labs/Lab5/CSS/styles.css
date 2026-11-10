@@ -40,8 +40,17 @@ a:visited {
     color: #FFCC00;
 }
 
+
 .feedback-main {
     padding: 40px 20px;
+}
+
+
+.main-wrapper {
+    position: relative;
+    padding-top: 150px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .flex-container {
@@ -101,6 +110,7 @@ fieldset {
     z-index: 100;
 }
 
+/* Відступи для сторінки Topics (під фіксований хедер) */
 .topics-main {
     padding: 20px;
     margin-top: 120px;
@@ -278,9 +288,6 @@ body.night-mode .useful-aside {
 /* ================== MEDIA QUERIES ================== */
 
 @media only screen and (max-width: 900px) {
-    body{
-        padding-top: 20px;
-    }
     nav {
         display: flex;
         flex-wrap: wrap;
@@ -291,6 +298,15 @@ body.night-mode .useful-aside {
 
     nav > button {
         margin-right: 0;
+    }
+
+    .topics-main {
+        margin-top: 180px;
+    }
+
+
+    .main-wrapper {
+        padding-top: 260px !important;
     }
 
     .goal-container {
@@ -308,10 +324,10 @@ body.night-mode .useful-aside {
     .useful-aside {
         display: block !important;
         position: relative !important;
-        width: 90% !important;
-        max-width: 90%;
+        width: 100% !important;
+        max-width: 100%;
         float: none !important;
-        margin-top: 20px;
+        margin-top: 30px;
         margin-left: 0;
     }
 
@@ -342,8 +358,13 @@ body.night-mode .useful-aside {
 }
 
 @media only screen and (max-width: 480px) {
-    body {
-        padding-top: 200px;
+
+    .topics-main {
+        margin-top: 220px;
+    }
+
+    .main-wrapper {
+        padding-top: 300px !important;
     }
 
     .topics-header {
