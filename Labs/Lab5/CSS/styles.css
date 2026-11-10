@@ -8,9 +8,15 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: hsl(0, 0%, 98%); /* HSL color */
-    color: rgb(40, 40, 40); /* RGB color */
+    background-color: hsl(0, 0%, 98%);
+    color: rgb(40, 40, 40);
     line-height: 1.6;
+    min-height: 100vh;
+}
+
+html {
+    min-height: 100vh;
+    background-color: hsl(0, 0%, 98%);
 }
 
 h1, h2, h3 {
@@ -38,7 +44,6 @@ a:visited {
     padding: 40px 20px;
 }
 
-/* Кросбраузерність для Flexbox */
 .flex-container {
     display: -webkit-box;
     display: -moz-box;
@@ -83,24 +88,22 @@ fieldset {
     background: white;
 }
 
-/* Topics Page (Grid Layout) */
 .topics-header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     background-color: white;
     padding: 15px 20px;
-
-    /* Кросбраузерність для Box Shadow */
-    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     z-index: 100;
 }
 
 .topics-main {
-    margin-top: 80px;
     padding: 20px;
+    margin-top: 120px;
 }
 
 .grid-container {
@@ -125,15 +128,12 @@ fieldset {
     margin-bottom: 15px;
 }
 
-/* Гнучкі зображення */
 .topic-card img {
     width: 100%;
     max-width: 150px;
     height: auto;
     display: block;
     margin: 0 auto 15px;
-
-    /* Кросбраузерні переходи (Transitions) */
     -webkit-transition: -webkit-filter 0.3s ease;
     -moz-transition: filter 0.3s ease;
     -o-transition: filter 0.3s ease;
@@ -153,7 +153,7 @@ fieldset {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -170,14 +170,13 @@ fieldset {
     cursor: pointer;
 }
 
-/* Замінено абсолютні px на % */
 .accordion-container {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 45px;
+    left: 20px;
     width: 100%;
     max-width: 250px;
-    margin-top: 50px;
+    z-index: 90;
 }
 
 .accordion-header {
@@ -228,10 +227,9 @@ fieldset {
     color: #fff;
     padding: 10px;
     border-radius: 5px;
-
-    -webkit-box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-    -moz-box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 100;
     white-space: normal;
 }
@@ -241,7 +239,6 @@ fieldset {
     margin-bottom: 30px;
 }
 
-/* Замінено 300px на відносну одиницю */
 #search-topic {
     padding: 10px;
     width: 100%;
@@ -249,15 +246,6 @@ fieldset {
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-html {
-    min-height: 100vh;
-    background-color: hsl(0, 0%, 98%);
-}
-
-body {
-    min-height: 100vh;
 }
 
 html.night-mode,
@@ -287,49 +275,103 @@ body.night-mode .useful-aside {
     border: 1px solid #ccc;
 }
 
-/* АДАПТИВНІСТЬ (Брейкпоінти)*/
+/* ================== MEDIA QUERIES ================== */
 
-/* Планшети */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
+    body{
+        padding-top: 20px;
+    }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    nav > button {
+        margin-right: 0;
+    }
+
+    .goal-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .goal-text {
+        width: 100% !important;
+        max-width: 100%;
+        float: none;
+    }
+
+    .useful-aside {
+        display: block !important;
+        position: relative !important;
+        width: 90% !important;
+        max-width: 90%;
+        float: none !important;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .accordion-container {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
     .grid-container {
         grid-template-columns: 1fr;
     }
+
     .flex-container {
         flex-direction: column;
     }
+
     .topic-title {
         font-size: 1.4rem;
     }
+
     .modal-content {
         width: 80%;
     }
 }
 
-/* Смартфони */
 @media only screen and (max-width: 480px) {
+    body {
+        padding-top: 200px;
+    }
+
     .topics-header {
         padding: 10px;
     }
+
     .topics-header h1 {
         font-size: 1.5rem;
     }
-    /* Акордеон більше не "літає" зліва, а стає у загальний потік */
-    .accordion-container {
-        position: absolute;
-        top: 100px;
-        left: 20px;
-        width: 100%;
-        max-width: 250px;
-        z-index: 110;
-        margin-top: 0;
-    }
+
     #search-topic {
         width: 90%;
     }
-    /* Tooltip опускається вниз, щоб не вилазити за межі екрану */
+
     .tooltip-text {
         left: 0;
         top: 100%;
         width: 100%;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    nav > button {
+        width: 100%;
+        text-align: center;
     }
 }
